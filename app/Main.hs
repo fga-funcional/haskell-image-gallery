@@ -5,6 +5,7 @@ module Main where
 import Web.Scotty
 import GHC.Generics
 import Data.Aeson (FromJSON, ToJSON)
+import Network.Wai.Middleware.Cors
 
 instance ToJSON Image
 instance FromJSON Image
@@ -26,6 +27,8 @@ main :: IO ()
 main = do
   putStrLn "Starting Server..."
   scotty 3000 $ do
+
+    middleware simpleCors
 
     get "/" $ do
       text "Ola mundo!!"
