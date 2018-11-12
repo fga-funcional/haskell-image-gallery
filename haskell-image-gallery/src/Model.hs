@@ -26,6 +26,7 @@ instance ToJSON Image
 instance FromJSON Image
 
 data ModelConfig = ModelConfig {
+     dbHost :: String,
      dbName :: String,
      dbUser :: String,
      dbPassword :: String
@@ -34,7 +35,8 @@ data ModelConfig = ModelConfig {
 
 newConn :: ModelConfig -> IO Connection
 newConn conf = connect defaultConnectInfo
-                       { connectUser = dbUser conf
+                       { connectHost = dbHost conf
+                       , connectUser = dbUser conf
                        , connectPassword = dbPassword conf
                        , connectDatabase = dbName conf
                        }

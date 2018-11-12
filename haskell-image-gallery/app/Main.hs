@@ -24,10 +24,12 @@ import Database.PostgreSQL.Simple
 -- Parse file "application.conf" and get the DB connection info
 makeModelConfig :: C.Config -> IO (Maybe Model.ModelConfig)
 makeModelConfig conf = do
+    host <- C.lookup conf "database.host" :: IO (Maybe String)
     name <- C.lookup conf "database.name" :: IO (Maybe String)
     user <- C.lookup conf "database.user" :: IO (Maybe String)
     password <- C.lookup conf "database.password" :: IO (Maybe String)
-    return $ ModelConfig <$> name
+    return $ ModelConfig <$> host
+                         <*> name
                          <*> user
                          <*> password
 
