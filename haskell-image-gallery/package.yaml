@@ -25,6 +25,7 @@ dependencies:
   - bytestring         
   - text               
   - postgresql-simple  
+  - postgresql-simple-migration
   - aeson              
   - HTTP               
   - transformers       
