@@ -17,7 +17,18 @@ COPY haskell-image-gallery/stack.yaml /home/haskell-image-gallery/
 
 RUN stack setup
 
-COPY haskell-image-gallery /home/haskell-image-gallery/
+COPY haskell-image-gallery/haskell-image-gallery.cabal /home/haskell-image-gallery/haskell-image-gallery.cabal
+COPY haskell-image-gallery/app /home/haskell-image-gallery/app
+COPY haskell-image-gallery/src /home/haskell-image-gallery/src
+COPY haskell-image-gallery/test /home/haskell-image-gallery/test
+COPY haskell-image-gallery/Setup.hs /home/haskell-image-gallery/Setup.hs
+COPY haskell-image-gallery/LICENSE /home/haskell-image-gallery/LICENSE
+COPY haskell-image-gallery/README.md /home/haskell-image-gallery/README.md
+COPY haskell-image-gallery/ChangeLog.md /home/haskell-image-gallery/ChangeLog.md
 
 RUN stack build --allow-different-user
+
+COPY haskell-image-gallery/application.conf /home/haskell-image-gallery/application.conf
+COPY haskell-image-gallery/postgresql/ /home/haskell-image-gallery/postgresql
+
 RUN stack install
