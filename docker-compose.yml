@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db:
+    container_name: 'haskell_image_gallery_db'
+    image: postgres
+    restart: always
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_USER: hig
+      POSTGRES_PASSWORD: hig
+      POSTGRES_DB: hig
+
+  haskell:
+    container_name: 'haskell_image_gallery'
+    depends_on:
+        - db
+    build: .
+    tty: true
+    ports:
+      - '3000:3000'
+    command: /root/.local/bin/haskell-image-gallery-exe
+

@@ -20,10 +20,40 @@ extra-source-files:
 description:         Please see the README on GitHub at <https://github.com/githubuser/haskell-image-gallery#readme>
 
 dependencies:
-- base >= 4.7 && < 5
+  - base               
+  - scotty             
+  - bytestring         
+  - text               
+  - postgresql-simple  
+  - postgresql-simple-migration
+  - aeson              
+  - HTTP               
+  - transformers       
+  - wai                
+  - wai-middleware-static
+  - wai-extra          
+  - wai-cors
+  - resource-pool      
+  - configurator       
+  - MissingH
 
 library:
   source-dirs: src
+  dependencies:
+  - base
+  - scotty
+  - postgresql-simple
+  - aeson
+  - wai-cors
+  - resource-pool
+  - text
+  - bytestring
+  ghc-options:
+  - -Wall
+  - -Werror
+  - -Wincomplete-record-updates
+  - -Wincomplete-uni-patterns
+  - -Wredundant-constraints
 
 executables:
   haskell-image-gallery-exe:
@@ -46,3 +76,4 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - haskell-image-gallery
+    - postgresql-simple
