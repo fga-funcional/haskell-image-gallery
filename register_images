@@ -1,0 +1,63 @@
+#!/bin/python3
+
+import requests
+
+src = (
+    "http://1.bp.blogspot.com/-7lyzrKTNfhc/UP_Yw74K1MI/AAAAAAAARb0/A2OSPBmRBxo/s1600/a+Air+Balloons+Wallpapers+08.jpg",
+    "http://2.bp.blogspot.com/-vRsDs4ji8TU/UOnQvfWaOmI/AAAAAAAALw0/xthYJvqkkbs/s1600/animal-green-snake-backgrounds-wallpapers.jpg",
+    "http://hdqwalls.com/wallpapers/milford-sound-sunset-new-zealand-po.jpg",
+    "http://wallpaper21.com/wp-content/uploads/2017/09/ATTRACTIVE-STUNNING-WOLF-FACE-DARK-WILD-ANIMALS-HD-QUALITY-DESKTOP-BACKGROUND-1080p-HD-wallpaper-wpt8002186.jpg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2VhRDUxRxrYlafNzZGYpOoXQMg_ukIArkGVSrJaUHb2nySpR7hw",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9EHa1cVeK8fjZuv3646gYFB_xjbxVxhLZTHUpmRz0QCJ9Tl-6iQ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOPWQ1WUhKVRc66e3cMxt0f62dagIafLwdiFCDxS7TSSHa7gv0kQ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3y_7n5Kz_cG6ghbkr2AT6cuSti_0Bx5UowqtfwX75B4HKdftOwA",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKG0CpKNM_TR8VE4pTXUbw_CPLodPt_oRgLADM6IpwIU3PDRpVZA",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZRYEaEvI1tPwottcvBumkN0Uy-dn6m_E5Qxipldc9LuwnaTxR",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmUyxZz58L_1UECsHNTYTvv6jfJoJGla4UZDeM7meIGoBGY3v-",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpL6bB5_2X_7bUKDC0Gq_MFjOs52Moyb1Zdph_HRhh7yjokuXLGQ",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9EJxjq6Kph7nnh_aX9mfBy0HaFoJFtDCn4z_OIhhUVnazUU96",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSatSH1ogESjWydHnGWF7Xl6Mf3-64lseMtIEjHtSJVXMUtmj5F",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmMZDgPJiNmBb05gCPqMLhecNqpJY06VXFa77EJMhJKQLoYP0PEA",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9QdtMszM5ualskt-LAGlkf39LAL2MmziJ55FKsY4st2TfApD3Cw",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQASKVqlfnZzW4QV57OHwgkaXATHzBDb9P3EJOkdMHejAxyr76Lg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTayAb-nvg4wtLgi0UGXlbjlrnacwLdL-SwKqyGC1h5Qvbz6drsLg",
+    "https://images.unsplash.com/photo-1503327431567-3ab5e6e79140?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1600d7c3643474cad51afa03d891722c&w=1000&q=80",
+    "https://images.unsplash.com/photo-1503756234508-e32369269deb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=47b63db904d2c72377ffc588f645eb45&w=1000&q=80",
+    "https://images.unsplash.com/photo-1504470695779-75300268aa0e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6612fd264e1ef7989694af7ad0b54c1c&w=1000&q=80",
+    "https://s2.favim.com/610/150408/africa-animal-beautiful-black-Favim.com-2630582.jpg",
+    "https://store-images.s-microsoft.com/image/apps.53222.13510798887177659.9395e5d7-0d34-4b14-85b5-ca96f589dd65.52ff80a2-9b48-4862-a089-8dc8877af6b6?mode=scale&q=90&h=270&w=270&background=%23000000",
+    "https://wallpapercave.com/wp/cS487ew.jpg"
+)
+
+description = (
+    "Balões",
+    "Cobra verde",
+    "Nova zelândia",
+    "Um lobo",
+    "Leão",
+    "Igreja",
+    "Pirulitos",
+    "Onda",
+    "Grandy Canyon",
+    "Luar",
+    "Eclipse",
+    "Deque",
+    "Fundo do mar",
+    "Órbitas",
+    "Pôr do Sol",
+    "Tintas",
+    "Raios",
+    "Lobo branco",
+    "Por do Sol com Barco",
+    "Praia",
+    "Fogueira",
+    "Onça",
+    "Praia com coqueiro",
+    "Luar misterioso"
+)
+
+images = list(zip([1]*len(src), src, description))
+print(images)
+
+for idx, img_src, img_desc in images:
+    print(requests.post('http://localhost:3000/admin/images', json={'id': idx, 'title': 'Título', 'src': img_src, 'description': img_desc}))
