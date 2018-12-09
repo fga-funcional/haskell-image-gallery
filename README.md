@@ -13,3 +13,8 @@ Dockerized Haskell Rest API for yielding information about images. It's integrat
 
 ### Running
 * `sudo docker-compose up`
+
+## Reference repositories
+For building this, two repositories served as references and helped a lot:
+* [scotty-blog-postgres](https://github.com/dbushenko/scotty-blog-postgres)
+* [haskell-scotty-realworld-example-app](https://github.com/eckyputrady/haskell-scotty-realworld-example-app)
