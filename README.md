@@ -1,11 +1,15 @@
 # haskell-image-gallery
 
-## Aluno: Ícaro Pires de Souza Aragão | Matrícula: 15/0129815
-## Aluno: Vinicius Ferreira Bernardo de Lima | Matrícula: 15/0151331
+Dockerized Haskell Rest API for yielding information about images. It's integrated with a PostgreSql database using its offical docker container, beyond it uses a migrations for creating table on up.
 
-# Guia de utilização
-* 1: Execute o comando `sudo docker-compose up`
-* 2: Em outro terminal, execute o comando `chmod +x register_images; ./register_images` na pasta raíz do projeto
+## Using
+### Routes
 
-## Frontend
-[Link para o respositório do frontend](https://github.com/fga-funcional/elm-image-gallery)
+* **list:** `/images`
+* **create:** `/admin/images`
+* **update:** `/admin/images`
+* **get:** `/image/:id`
+* **delete:** `/admin/image/:id`
+
+### Running
+* `sudo docker-compose up`
